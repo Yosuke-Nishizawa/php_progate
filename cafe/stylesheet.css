@@ -1,0 +1,149 @@
+body{
+  font-family: Lato, 'Hiragino Kaku Gothic Pro', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: #89949e;
+}
+.menu-wrapper{
+  margin-bottom: 60px;
+  text-align: center;
+}
+.container{
+  width: 1170px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.logo{
+  font-family: Pacifico, sans-serif;
+  font-size: 40px;
+  color: #4ac0b9;
+  display: inline-block;
+  padding: 20px 0;
+  margin: 80px 0 30px;
+  border-top: 5px solid #42c7c1;
+  border-bottom: 5px solid #42c7c1;
+}
+h2, h3, h4, h5, h6{
+  font-weight: 400;
+}
+html, body, ul, ol, li, h1, h2, h3, h4, h5, h6, p, form, input, div {
+  margin: 0;
+  padding: 0;
+}
+.menu-items{
+  margin-bottom: 60px;
+}
+input[type="submit"]{
+  display: inline-block;
+  width: 160px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 20px;
+  border-radius: 30px;
+  border-style: none;
+  color: white;
+  background-color: #42c7c1;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+}
+.menu-item{
+  display: inline-block;
+  width: 40%;
+  padding: 20px;
+  margin-top: 40px;
+}
+.menu-item-image{
+  border-radius: 5px;
+}
+img {
+  width: 100%;
+}
+.menu-item-name{
+  line-height: 1.7;
+  font-size: 25px;
+  margin-top: 15px;
+  color: #4ac0b9;
+}
+a {
+  text-decoration: none;
+  color: #4ac0b9;
+}
+a:visited{
+  color: #4ac0b9;
+}
+.menu-item-type{
+  font-size: 14px;
+}
+.price{
+  margin: 15px 0;
+  font-size: 18px;
+  color: #322f33;
+}
+input{
+  margin-left: 20px;
+  margin-right: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 60px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.menu-item span{
+  font-size: 16px;
+}
+.icon-spiciness{
+  width: 20px;
+}
+.review-wrapper{
+  text-align: center;
+  width: 400px;
+  margin: 60px auto;
+}
+.review-list-wrapper{
+  margin: 50px 0;
+  text-align: left;
+}
+.review-list-title{
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(104, 107, 106, 0.15);
+}
+.review-list-title img, .review-list-title h4, .review-list-item img{
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon-review{
+  width: 40px;
+  margin-right: 10px;
+  margin-top: -12px;
+}
+.review-list-title h4{
+  font-size: 22px;
+}
+.icon-user{
+  width: 30px;
+}
+.review-list-item{
+  margin-bottom: 30px;
+  background: #e5eef6;
+  padding: 10px;
+  border-radius: 5px;
+}
+.review-user{
+  width: 60px;
+  display: inline-block;
+  border-right: 1px solid #c1ced7;
+  padding-right: 8px;
+  text-align: center;
+}
+.review-text{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 16px;
+  margin-left: 10px;
+  font-size: 15px;
+}
