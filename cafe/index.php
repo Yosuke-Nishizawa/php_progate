@@ -1,3 +1,8 @@
+<?php
+require_once 'data.php';
+require_once 'food.php';
+require_once 'drink.php';
+?>
 <!doctype html>
 <html>
 <head>
@@ -9,29 +14,27 @@
 <body>
   <div class="menu-wrapper container">
     <h1 class="logo">Cafē Progate</h1>
-    <h3>メニュー2品</h3> 
+    <h3>メニュー<?php echo count($menuList) ?>品</h3> 
     <form method="post" action="confirm.php">
       <div class="menu-items">
-        <div class="menu-item">
-          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/juice.png" class="menu-item-image">
-          <h3 class="menu-item-name">
-            <a href="show.php?name=JUICE">JUICE</a>
-          </h3>
-          <p class="menu-item-type">アイス</p>
-          <p class="price">&yen;648(税込)</p>
-          <input type="text" value="0" name="JUICE">
-          <span>個</span>
-        </div>
-        <div class="menu-item">
-          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/curry.png" class="menu-item-image">
-          <h3 class="menu-item-name">
-            <a href="show.php?name=CURRY">CURRY</a>
-          </h3>
-          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/chilli.png" class="icon-spiciness">
-          <p class="price">&yen;972(税込)</p>
-          <input type="text" value="0" name="CURRY">
-          <span>個</span>
-        </div>
+        <?php foreach($menuList as $menu): ?>
+          <div class="menu-item">
+            <img src="<?php echo $menu->getImg() ?>" class="menu-item-image">
+            <h3 class="menu-item-name">
+              <a href="show.php?name=<?php echo $menu->getName() ?>"><?php echo $menu->getName() ?></a>
+            </h3>
+            <?php if($menu instanceof Drink): ?>
+              <p class="menu-item-type"><?php echo $menu->isHot() ? 'ホット' : 'アイス' ?></p>
+            <?php elseif($menu instanceof Food): ?>
+              <?php for($i=1;$i<=$menu->getHotness();$i++): ?>
+                <img src="<?php echo sprintf($imgPath, 'chilli.png') ?>" class="icon-spiciness">
+              <?php endfor ?>
+            <?php endif ?>
+            <p class="price">&yen;<?php echo $menu->getAmount() ?>(税込)</p>
+            <input type="text" value="0" name="<?php echo $menu->getName() ?>">
+            <span>個</span>
+          </div>
+        <?php endforeach ?>
       </div> 
       <input type="submit" value="注文する">
     </form>
